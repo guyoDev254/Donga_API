@@ -20,7 +20,44 @@ model User {
   phone String
   address String
   password String
-  image     String? 
+  image     String?
+  otp String?
+  otp_expire DateTime?
+  status   Boolean @default(false)
+  accounts Account[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+}
+
+model Account {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  balance     Decimal  @default(0.00)
+  currency    String   @default("USD")
+  transactions Transaction[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  walletId    String
+  wallet      Account   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  amount      Decimal
+  type        TransactionType
+  status      TransactionStatus @default(PENDING)
+  createdAt   DateTime @default(now())
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAWAL
+  TRANSFER
+}
+
+enum TransactionStatus {
+  PENDING
+  SUCCESS
+  FAILED
 }
