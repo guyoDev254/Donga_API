@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to DongaBank</title>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      color: #2563eb;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .content {
+      color: #374151;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .info {
+      margin-top: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 class="header">🎉 Welcome to DongaBank!</h2>
+  <p class="content">Your account has been successfully created.</p>
+
+  <div class="info">
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Acc Number:</strong> {{accNo}}</p>
+  </div>
+
+  <div class="content">
+    <h3>🔹 What’s Next?</h3>
+    <ul>
+      <li>Secure your account by enabling <strong>Two-Factor Authentication (2FA)</strong>.</li>
+      <li>Deposit funds into your wallet and start transacting.</li>
+      <li>Explore features like fund transfers, bill payments, and more.</li>
+    </ul>
+  </div>
+
+  <a href="https://dongabank.com/get-started" class="button">Get Started</a>
+
+  <div class="footer">
+    <p>Need help? Contact us at <a href="mailto:support@dongabank.com">support@dongabank.com</a></p>
+    <p>&copy; 2025 DongaBank. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>

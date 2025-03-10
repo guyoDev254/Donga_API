@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # 2. Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # 3. Copy package.json and package-lock.json
 COPY package*.json ./

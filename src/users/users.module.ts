@@ -9,7 +9,11 @@ import { MailModule } from 'src/mail/mail.module';
 @Module({
   controllers: [UsersController],
   providers: [UsersService, MailService],
-  imports: [PrismaModule, MulterModule.register({dest: './uploads'}), MailModule],
-  exports: [UsersService]
+  imports: [
+    PrismaModule,
+    MulterModule.register({ dest: './uploads' }),
+    MailModule,
+  ],
+  exports: [UsersService],
 })
 export class UsersModule {}

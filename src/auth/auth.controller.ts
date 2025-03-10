@@ -10,22 +10,25 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
-  login(@Body() {email, password}: LoginDto) {
-    return this.authService.login(email, password)
+  login(@Body() { email, password }: LoginDto) {
+    return this.authService.login(email, password);
   }
 
   @Patch('change-password')
-  changePassword(@Body() changePasswordDto:ChangePasswordDto) {
-    return this.authService.changePassword(changePasswordDto)
+  changePassword(@Body() changePasswordDto: ChangePasswordDto) {
+    return this.authService.changePassword(changePasswordDto);
   }
 
   @Post('forget-password')
-  forgetPassword(@Body() {email}: {email: string}) {
-    return this.authService.forgetPassword(email)
+  forgetPassword(@Body() { email }: { email: string }) {
+    return this.authService.forgetPassword(email);
   }
 
   @Post('reset-password')
-  resetPassword(@Body() {email, otp, password}: {email: string, otp: string, password: string}) {
-    return this.authService.resetPassword(email, otp, password)
+  resetPassword(
+    @Body()
+    { email, otp, password }: { email: string; otp: string; password: string },
+  ) {
+    return this.authService.resetPassword(email, otp, password);
   }
 }

@@ -14,7 +14,7 @@ import { join } from 'path';
         secure: false,
         auth: {
           user: 'guyoabdub43@gmail.com',
-          pass: 'tmoe ptfu nshz rtoh'
+          pass: 'tmoe ptfu nshz rtoh',
         },
       },
       defaults: {
@@ -26,9 +26,9 @@ import { join } from 'path';
         options: {
           strict: true,
         },
-      }
-    })
+      },
+    }),
   ],
-  exports: [MailService]
+  exports: [MailService],
 })
 export class MailModule {}
